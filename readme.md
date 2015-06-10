@@ -18,6 +18,9 @@ git remote add origin <githubrepo>
 echo <readme> > readme.md
 echo node_modules > .gitignore
 npm init
+# install default dev deps for style, testing, and pre-commit checks
+# also adds style+test checks to pre-commit
+npm install --save-dev standard tape pre-commit
 git add --all
 git commit -m "initial commit"
 git push origin master

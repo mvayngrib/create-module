@@ -15,7 +15,7 @@ var authOptions = {
   , userAgent  : 'npm create-module'
 }
 
-if(process.argv.length === 2) {
+if (process.argv.length === 2) {
   console.log('Usage: create-module <name>')
   process.exit()
 }
@@ -29,4 +29,3 @@ ghauth(authOptions, function (err, authData) {
   })
 
 })
-  
