@@ -109,9 +109,10 @@ function createModule(name, token, options, cb) {
     var pkg = require(pkgPath)
     if (options.check) pkg.private = true
 
-    pkg.scripts.style = 'standard'
+    pkg.scripts.style = 'standard $(git ls-files "**.js")'
     pkg['pre-commit'] = [
-      'style'
+      'style',
+      'test'
     ]
 
     if (!pkg.scripts.test || pkg.scripts.test.indexOf('Error: no test specified') !== -1) {
